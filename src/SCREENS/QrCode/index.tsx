@@ -18,7 +18,7 @@ export function QrCode(){
         return(
             <View style={styles.container}>
                 <Text style={styles.message}>Você precisa dar permissão para acesso à câmera</Text>
-                <TouchableOpacity onPress={requestPermission}><Text>Solicitar </Text>permissão</TouchableOpacity>
+                <TouchableOpacity onPress={requestPermission}><Text>Solicitar permissão</Text></TouchableOpacity>
             </View>
         );
     }
