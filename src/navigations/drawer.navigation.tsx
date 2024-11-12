@@ -6,6 +6,7 @@ import {Camera} from '../SCREENS/Camera';
 import { Home } from '../SCREENS/Homero';
 import { LocationMap } from '../SCREENS/LocationMap';
 import { Imagens } from '../SCREENS/Imagens';
+import { LocationMapOrDest } from '../SCREENS/LocationMapOrDest';
 import { ScreenQrCode } from '../SCREENS/';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import Entypo from '@expo/vector-icons/Entypo';
@@ -17,6 +18,7 @@ type DrawerParamList = {
     Album: undefined
     QrCode: undefined
     Location: undefined
+    MapOrDest: undefined
 }
 
 type DrawerScreenNavigationProp = DrawerNavigationProp<DrawerParamList, 'Home'>
@@ -43,6 +45,11 @@ type DrawerScreenNavigationProp6 = DrawerNavigationProp<DrawerParamList, 'Locati
 export type DrawerTypes6 = {
     navigation : DrawerScreenNavigationProp
 }
+type DrawerScreenNavigationProp7 = DrawerNavigationProp<DrawerParamList, 'MapOrDest'>
+export type DrawerTypes7 = {
+    navigation : DrawerScreenNavigationProp
+}
+
 
 
 
@@ -99,6 +106,14 @@ export function DrawerNavigation(){
                }}
               />
                <Drawer.Screen name='Location' component={LocationMap}
+                options={{
+            
+                    drawerIcon:()=>(
+                        <FontAwesome5 name="map-marked-alt" size={24} color="white" />
+                    ),  
+                }}
+            />
+                 <Drawer.Screen name='MapOrDest' component={LocationMapOrDest}
                 options={{
             
                     drawerIcon:()=>(
